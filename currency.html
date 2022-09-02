@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Magic Of Currency</title>
+        <link rel="stylesheet" href="currency.css">
+        <script src="currency.js"></script>
+    </head>
+    <body>
+        <hi>Convertor Of Currency</hi>
+        <div class="container">
+            <div class="convert">
+                <p>Amount</p>
+                <p>From</p>
+                <p>To</p>
+            </div>
+            <form action="">
+                <div class="currencies">
+                    <input
+                    type="number"
+                    id="amount"
+                    placeholder="Enter amount"
+                    step=".0001"
+                    />
+                    <select name="" id="local_currency">
+                        <option value="USD">US Dollar</option>
+                    </select>
+                    <select name="" id="Foreign_currency">
+                        <option value="USD">US Dollar</option>
+                    </select>
+                </div>
+                <input type="submit" value="Convert" />
+            </form>
+            <div id="results"></div>
+        </div>
+    </body>
+</html>    
