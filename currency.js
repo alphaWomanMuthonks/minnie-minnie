@@ -29,6 +29,7 @@ var searchValue;
 fromCurrecy.addEventListener('change', (event) => { 
 
     resultFrom = `${event.target.value}`; 
+    console.log(resultFrom);
 }); 
 
   
@@ -95,3 +96,16 @@ function clearVal() {
 
     document.getElementsByClassName("finalValue").innerHTML = ""; 
 };
+
+
+// https://data.fixer.io/api/convert
+//     ? access_key = NXBGYRFNOsKOybi3HVBks4xHMilbX9Da
+//     & from = GBP
+//     & to = JPY
+//     & amount = 25
+    
+
+fetch("https://api.apilayer.com/fixer/convert?to=to&from=from&amount=amount", requestOptions)
+.then(response => response.text())
+.then(result => console.log(result))
+.catch(error => console.log('error', error));
