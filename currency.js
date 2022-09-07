@@ -1,138 +1,97 @@
-document.addEventListener("DOMContentLoaded",() =>{
+// include api for currency change 
 
-    document.querySelector("form").onsubmit =() =>{
-        const base = document.querySelector("#local_currency").value;
-        fetch('https://api.exchangerate.host/latest?/source=ecb&base=${base}')
-        .then((response)=>response.json())
-        .then((data)=>{
-            const amount=document.querySelector('#amount').value;
-            let foreignCurrency;
-            foreignCurrency = document.getElementById["foreign_Currency"];
-            function convert(){
-                return amount*rate;
-            }
-            document.querySelectorAll('#results').innerHTML=
-            `${amount} ${base.toUpperCase()} equal to ${foreignCurrency} ${convert().toFixed(4)}`;
-        })
-        .catch((error)=>{
-            console.log("Error: ", error);
-            });
-            return false;
-    }
-   
-
-    const base = document.querySelector("#local_currency").value;
-    console.log(base);
-
-    const convert = document.querySelector('.input')
-    convert.addEventListener('click',()=>{
-
-        
-    });
-    // function getExchange(){
-    //     fetch('https://api.exchangerate.host/latest?/source=ecb&base=${base}')
-    // }
-    
-})
-// function addComment(event) {
-//     event.preventDefault()
-// }
-
-// // include api for currency change 
-
-// const api = "https://api.exchangerate-api.com/v4/latest/USD"; 
+const api = "https://api.exchangerate-api.com/v4/latest/USD"; 
 
   
-// // for selecting different controls 
+// for selecting different controls 
 
-// var search = document.querySelector(".searchBox"); 
+var search = document.querySelector(".searchBox"); 
 
-// var convert = document.querySelector(".convert"); 
+var convert = document.querySelector(".convert"); 
 
-// var fromCurrecy = document.querySelector(".from"); 
+var fromCurrecy = document.querySelector(".from"); 
 
-// var toCurrecy = document.querySelector(".to"); 
+var toCurrecy = document.querySelector(".to"); 
 
-// var finalValue = document.querySelector(".finalValue"); 
+var finalValue = document.querySelector(".finalValue"); 
 
-// var finalAmount = document.getElementById("finalAmount"); 
+var finalAmount = document.getElementById("finalAmount"); 
 
-// var resultFrom; 
+var resultFrom; 
 
-// var resultTo; 
+var resultTo; 
 
-// var searchValue; 
-
-  
-// // Event when currency is changed 
-
-// local_currency.addEventListener('change', (event) => { 
-
-//     resultFrom = `${event.target.value}`; 
-// }); 
+var searchValue; 
 
   
-// // Event when currency is changed 
+// Event when currency is changed 
 
-// foreign_Currency.addEventListener('change', (event) => { 
+fromCurrecy.addEventListener('change', (event) => { 
 
-//     resultTo = `${event.target.value}`; 
-// }); 
+    resultFrom = `${event.target.value}`; 
+}); 
+
+  
+// Event when currency is changed 
+
+toCurrecy.addEventListener('change', (event) => { 
+
+    resultTo = `${event.target.value}`; 
+}); 
 
   
 
-// search.addEventListener('input', updateValue); 
+search.addEventListener('input', updateValue); 
 
   
-// // function for updating value 
+// function for updating value 
 
-// function updateValue(e) { 
+function updateValue(e) { 
 
-//     searchValue = e.target.value; 
-// } 
-
-  
-// // when user clicks, it calls function getresults  
-
-// convert.addEventListener("click", convert); 
+    searchValue = e.target.value; 
+} 
 
   
-// // function getresults 
+// when user clicks, it calls function getresults  
 
-// function convert() { 
-
-//     fetch(`${api}`) 
-
-//         .then(currency => { 
-
-//             return currency.json(); 
-
-//         }).then(displayResults); 
-// } 
+convert.addEventListener("click", getResults); 
 
   
-// // display results after convertion 
+// function getresults 
 
-// function displayResults(currency) { 
+function getResults() { 
 
-//     let fromRate = currency.rates[local_currency]; 
+    fetch(`${api}`) 
 
-//     let toRate = currency.rates[foreign_Currency]; 
+        .then(currency => { 
 
-//     finalValue.innerHTML =  
+            return currency.json(); 
 
-//        ((foreign_Currency / local_currency) * searchValue).toFixed(2); 
-
-//     finalAmount.style.display = "block"; 
-// } 
+        }).then(displayResults); 
+} 
 
   
-// // when user click on reset button 
+// display results after convertion 
 
-// // function clearVal() { 
+function displayResults(currency) { 
 
-// //     window.location.reload(); 
+    let fromRate = currency.rates[resultFrom]; 
 
-// //     document.getElementsByClassName("finalValue").innerHTML = ""; 
-// // };
+    let toRate = currency.rates[resultTo]; 
 
+    finalValue.innerHTML =  
+
+       ((toRate / fromRate) * searchValue).toFixed(2); 
+
+    finalAmount.style.display = "block"; 
+} 
+
+  
+// when user click on reset button 
+
+function clearVal() { 
+
+    window.location.reload(); 
+
+    document.getElementsByClassName("finalValue").innerHTML = ""; 
+};
