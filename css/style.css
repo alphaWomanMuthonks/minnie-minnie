@@ -46,7 +46,7 @@ select{
     border-radius: .2rem;
     height: 2rem;
     font-size: 1.2rem;
-    border-color: green;
+    box-shadow:inset;
 }
 
 .convert-btn{
