@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', event =>{
     .then(data => calculateExchange(data))
   })
 
-  function calculateExchange(rate){
+  function calculateExchange(rate){                                            //this function calculates the amount after the rate conversion
     const amount = document.querySelector('#input-amount').value
     const conversionRate = rate.conversion_rate;
     const calculateAmount = amount * conversionRate
