@@ -20,9 +20,6 @@ body{
 .container-head h3{
     color: #fff;
 }
-.button{
-    transform: scale(1.8);
-}
 .convert-box{
     display: flex;
     flex-wrap: wrap;
@@ -63,7 +60,8 @@ input{
 }
 input:hover{
     cursor: pointer;
-    background: greenyellow;
+    background: blue;
+    transform: scale(1.1);
 }
 .display-result{
 text-align: center;
