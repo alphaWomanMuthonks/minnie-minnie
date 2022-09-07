@@ -1,127 +1,138 @@
-// document.addEventListener("DOMContentLoaded",() =>{
-//     document.getElementsById('input');
-//     input.addEventListener('click',()=>{
-//         return('results')
-//     });
-//     document.querySelector("form").onsubmit =() =>{
-//         const base = document.querySelector("#local_currency").value;
-//         fetch('https://api.exchangerate.host/latest?/source=ecb&base=${base}')
-//         .then((response)=>response.json())
-//         .then((data)=>{
-//             const amount=document.querySelector('#amount').value;
-//             let foreignCurrency;
-//             foreignCurrency = document.getElementById["foreign_Currency"];
-//             function convert(){
-//                 return amount*rate;
-//             }
-//             document.querySelectorAll('#results').innerHTML=
-//             `${amount} ${base.toUpperCase()} equal to ${foreignCurrency} ${convert().toFixed(4)}`;
-//         })
-//         .catch((error)=>{
-//             console.log("Error: ", error);
-//             });
-//             return false;
-//     }
+document.addEventListener("DOMContentLoaded",() =>{
+
+    document.querySelector("form").onsubmit =() =>{
+        const base = document.querySelector("#local_currency").value;
+        fetch('https://api.exchangerate.host/latest?/source=ecb&base=${base}')
+        .then((response)=>response.json())
+        .then((data)=>{
+            const amount=document.querySelector('#amount').value;
+            let foreignCurrency;
+            foreignCurrency = document.getElementById["foreign_Currency"];
+            function convert(){
+                return amount*rate;
+            }
+            document.querySelectorAll('#results').innerHTML=
+            `${amount} ${base.toUpperCase()} equal to ${foreignCurrency} ${convert().toFixed(4)}`;
+        })
+        .catch((error)=>{
+            console.log("Error: ", error);
+            });
+            return false;
+    }
+   
+
+    const base = document.querySelector("#local_currency").value;
+    console.log(base);
+
+    const convert = document.querySelector('.input')
+    convert.addEventListener('click',()=>{
+
+        
+    });
+    // function getExchange(){
+    //     fetch('https://api.exchangerate.host/latest?/source=ecb&base=${base}')
+    // }
     
-// })
+})
 // function addComment(event) {
 //     event.preventDefault()
 // }
 
-// include api for currency change 
+// // include api for currency change 
 
-const api = "https://api.exchangerate-api.com/v4/latest/USD"; 
-
-  
-// for selecting different controls 
-
-var search = document.querySelector(".searchBox"); 
-
-var convert = document.querySelector(".convert"); 
-
-var fromCurrecy = document.querySelector(".from"); 
-
-var toCurrecy = document.querySelector(".to"); 
-
-var finalValue = document.querySelector(".finalValue"); 
-
-var finalAmount = document.getElementById("finalAmount"); 
-
-var resultFrom; 
-
-var resultTo; 
-
-var searchValue; 
+// const api = "https://api.exchangerate-api.com/v4/latest/USD"; 
 
   
-// Event when currency is changed 
+// // for selecting different controls 
 
-local_currency.addEventListener('change', (event) => { 
+// var search = document.querySelector(".searchBox"); 
 
-    resultFrom = `${event.target.value}`; 
-}); 
+// var convert = document.querySelector(".convert"); 
 
-  
-// Event when currency is changed 
+// var fromCurrecy = document.querySelector(".from"); 
 
-foreign_Currency.addEventListener('change', (event) => { 
+// var toCurrecy = document.querySelector(".to"); 
 
-    resultTo = `${event.target.value}`; 
-}); 
+// var finalValue = document.querySelector(".finalValue"); 
 
-  
+// var finalAmount = document.getElementById("finalAmount"); 
 
-search.addEventListener('input', updateValue); 
+// var resultFrom; 
 
-  
-// function for updating value 
+// var resultTo; 
 
-function updateValue(e) { 
-
-    searchValue = e.target.value; 
-} 
+// var searchValue; 
 
   
-// when user clicks, it calls function getresults  
+// // Event when currency is changed 
 
-convert.addEventListener("click", convert); 
+// local_currency.addEventListener('change', (event) => { 
 
-  
-// function getresults 
-
-function convert() { 
-
-    fetch(`${api}`) 
-
-        .then(currency => { 
-
-            return currency.json(); 
-
-        }).then(displayResults); 
-} 
+//     resultFrom = `${event.target.value}`; 
+// }); 
 
   
-// display results after convertion 
+// // Event when currency is changed 
 
-function displayResults(currency) { 
+// foreign_Currency.addEventListener('change', (event) => { 
 
-    let fromRate = currency.rates[local_currency]; 
-
-    let toRate = currency.rates[foreign_Currency]; 
-
-    finalValue.innerHTML =  
-
-       ((foreign_Currency / local_currency) * searchValue).toFixed(2); 
-
-    finalAmount.style.display = "block"; 
-} 
+//     resultTo = `${event.target.value}`; 
+// }); 
 
   
-// when user click on reset button 
 
-// function clearVal() { 
+// search.addEventListener('input', updateValue); 
 
-//     window.location.reload(); 
+  
+// // function for updating value 
 
-//     document.getElementsByClassName("finalValue").innerHTML = ""; 
-// };
+// function updateValue(e) { 
+
+//     searchValue = e.target.value; 
+// } 
+
+  
+// // when user clicks, it calls function getresults  
+
+// convert.addEventListener("click", convert); 
+
+  
+// // function getresults 
+
+// function convert() { 
+
+//     fetch(`${api}`) 
+
+//         .then(currency => { 
+
+//             return currency.json(); 
+
+//         }).then(displayResults); 
+// } 
+
+  
+// // display results after convertion 
+
+// function displayResults(currency) { 
+
+//     let fromRate = currency.rates[local_currency]; 
+
+//     let toRate = currency.rates[foreign_Currency]; 
+
+//     finalValue.innerHTML =  
+
+//        ((foreign_Currency / local_currency) * searchValue).toFixed(2); 
+
+//     finalAmount.style.display = "block"; 
+// } 
+
+  
+// // when user click on reset button 
+
+// // function clearVal() { 
+
+// //     window.location.reload(); 
+
+// //     document.getElementsByClassName("finalValue").innerHTML = ""; 
+// // };
+
