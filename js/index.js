@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', event =>{   ///this is my first even
     output.textContent = calculateAmount;
 
   }
-  document.querySelector('.head').addEventListener("mouseenter", (event) => {
+  document.querySelector('.head').addEventListener("mouseenter", (event) => {        //this event listener highlights the head in a pink color once there is a mouse movement around it
     // highlight the mouseenter target
     event.target.style.color = "pink";
   
