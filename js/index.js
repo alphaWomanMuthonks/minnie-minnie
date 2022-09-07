@@ -1,7 +1,8 @@
-window.addEventListener('DOMContentLoaded', event =>{
+window.addEventListener('DOMContentLoaded', event =>{   ///this is my first event listener
   event.preventDefault()
 
-  const convert = document.getElementById('convert-btn')
+  const convert = document.getElementById('convert-btn') 
+  //this is my 2nd event listener for the convert button
   convert.addEventListener('click',(event)=>{
     event.preventDefault();
     const to = document.getElementById("currency-to").value;
