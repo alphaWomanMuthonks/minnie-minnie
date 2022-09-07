@@ -41,14 +41,14 @@ input{
     font-size: 1.2rem;
     width: 12rem;
 }
-            select{
-                width: 10rem;
-                border: none;
-                outline: none;
-                border-radius: .2rem;
-                height: 2rem;
-                font-size: 1.2rem;
-            }
+select{
+    width: 10rem;
+    border: none;
+    outline: none;
+    border-radius: .2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+}
         }
     }
     .convert-btn{
