@@ -1,5 +1,68 @@
 body{
-    background: url(https://images.pexels.com/photos/7634158/pexels-photo-7634158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-    background-position: fill ;
+    background: url(https://images.pexels.com/photos/4386178/pexels-photo-4386178.jpeg?auto=compress&cs=tinysrgb&w=600);
+    background-position: fit ;
     background-size: center;
 }
+ h1 {
+    text-align: center;
+    color:yellow;
+    font-size: 100px;
+ }
+ .container {
+    padding:40px;
+    margin-top: 40px;
+    width: 800px;
+    height: 400px;
+    background:gray (240, 96%, 56%);
+    background: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 30px;
+ }
+ .convert {
+    display: inline-flex;
+ }
+ p{
+    padding-right: 200px;
+    font-weight: bold;
+    font-size: 50px;
+    color: brown;
+ }
+ input[type="number"]{
+    height: 33px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    outline: none;
+    font-weight: bold;
+    font-size: 20px;
+ }
+ select{
+    margin-left: 40px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 20px;
+ }
+ input [type="submit"]{
+    margin: 40px 180px;
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background: yellow;
+    color: black;
+    font-size: 30px;
+
+ }
+ input[type="submit"]:hover{
+    background: rgb(1, 105, 53);
+    cursor: pointer;
+ }
+ #results {
+    font-size: 40px;
+    font-weight: bold;
+    color: yellow;
+ }

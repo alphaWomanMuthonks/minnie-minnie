@@ -9,7 +9,7 @@
         <script src="currency.js"></script>
     </head>
     <body>
-        <hi>Convertor Of Currency</hi>
+        <hi>CONVERTER OF CURRENCIES</hi>
         <div class="container">
             <div class="convert">
                 <p>Amount</p>
@@ -22,18 +22,31 @@
                     type="number"
                     id="amount"
                     placeholder="Enter amount"
-                    step=".0001"
+                    step="1"
                     />
-                    <select name="" id="local_currency">
+                    <select name="" id="local_currency"> 
                         <option value="USD">US Dollar</option>
+                        <option value="EUR">EUR</option>
+                        <option value="MAD">MAD - Moroccan Dirham</option>
+                        <option value="MDL">MDL - Moldovan Leu</option>
+                        <option value="MGA">MGA - Malagasy Ariary</option>
                     </select>
-                    <select name="" id="Foreign_currency">
-                        <option value="USD">US Dollar</option>
+                    <!-- <div class="currency converter__StyledDiv-zieln1-0 dYwyct">
+                        <button aria-label="Swap currencies" type="button" class="miscellany__StyledButton-sc-1r08bla-0 kDuZbJ"></button>
+
+                    </div> -->
+                    <select name="" id="foreign_Currency">
+                        <option value="USD">USD</option> 
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="KES">KES - Kenyan Shilling</option>
+                        <option value="SDG">SDG - Sudanese Pound</option>
+                        <option value="SEK">SEK - Swedish Krona</option>
                     </select>
                 </div>
                 <input type="submit" value="Convert" />
             </form>
             <div id="results"></div>
         </div>
+        
     </body>
 </html>    
