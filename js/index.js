@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', event =>{
   }
   document.querySelector('.head').addEventListener("mouseenter", (event) => {
     // highlight the mouseenter target
-    event.target.style.color = "purple";
+    event.target.style.color = "pink";
   
     // reset the color after a short delay
     setTimeout(() => {

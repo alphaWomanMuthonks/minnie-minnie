@@ -1,13 +1,12 @@
 body{
-    background-image: url(winter.jpg);
+    background-image: url(../images/bg.jpg);
     padding: 0; margin: 0;
     box-sizing: border-box;
     font-size: 2rem;
 }
 
 .container{
-    background: blue;
-    background-image: url(winter.jpg);
+    background: rgb(30, 57, 65);
     min-width: 30rem;
     top: 50%; left: 50%;
     position: absolute;
@@ -21,7 +20,9 @@ body{
 .container-head h3{
     color: #fff;
 }
-
+.button{
+    transform: scale(1.8);
+}
 .convert-box{
     display: flex;
     flex-wrap: wrap;
@@ -58,7 +59,6 @@ input{
     width: 5rem;
     height: 2rem;
     font-size: 1.2rem;
-    background: green; color: #fff;
     border: none; outline: none; border-radius: .2rem;
 }
 input:hover{
